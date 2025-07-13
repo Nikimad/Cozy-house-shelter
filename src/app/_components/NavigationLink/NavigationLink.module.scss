@@ -1,0 +1,15 @@
+@use "@/styles/variables.scss" as *;
+@use "@/styles/mixins.scss" as *;
+
+.root {
+  transition: color $main-transition;
+  color: $color-light-300;
+
+  &_active {
+    color: $color-light-200;
+  }
+
+  @include hover {
+    color: $color-light-200;
+  }
+}

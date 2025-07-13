@@ -1,0 +1,32 @@
+@use "@/styles/variables.scss" as *;
+@use "@/generated_styles/_breakpoints.scss" as *;
+
+
+.root {
+  list-style: none;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+
+  &::before {
+    content: "";
+    height: 3px;
+    border-radius: 2px;
+    background-color: $color-accent-200;
+    position: absolute;
+    left: anchor(--nav-link-active left);
+    right: anchor(--nav-link-active right, 0);
+    bottom: -10px;
+    transition: left $main-transition, right $main-transition;
+  }
+
+  @media (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.activeItem {
+  anchor-name: --nav-link-active;
+}

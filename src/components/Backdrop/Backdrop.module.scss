@@ -1,0 +1,11 @@
+@use "@/styles/z-index.scss" as *;
+
+.root {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: $z-index-backdrop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
