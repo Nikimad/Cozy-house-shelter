@@ -1,0 +1,15 @@
+@use "@/generated_styles/breakpoints.scss" as *;
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin mobileOnly {
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
