@@ -1,12 +1,15 @@
 @use "@/styles/variables.scss" as *;
 @use "@/styles/mixins.scss" as *;
-@use "@/generated_styles/_variables.scss" as *;
 @use "@/generated_styles/_breakpoints.scss" as *;
 
 .root {
-  background-color: #211f20;
+  background-color: $color-dark-300;
   background-image: url("/images/noise.png"),
-    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+    radial-gradient(
+      100% 215.42% at 0% 0%,
+      $color-gradient-start 0%,
+      $color-gradient-finish 100%
+    );
   background-repeat: repeat, no-repeat;
   background-size: auto;
   margin-top: -1px;
@@ -18,20 +21,22 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  &__img {    
-    &__container {
+  &__img__container {
+    width: 100%;
+    aspect-ratio: 1 / 1.07375;
+    position: relative;
+    margin-left: auto;
+
+    @media (min-width: $tablet) {
       width: 56.5%;
-      aspect-ratio: 1 / 1.07375;
-      position: relative;
-      margin-left: auto;
     }
   }
 
   &__info {
     display: grid;
     align-content: center;
-    gap: 42px;
-    padding-bottom: 100px;
+    gap: 24px;
+    padding-bottom: 60px;
 
     &__title {
       font-size: 44px;
@@ -39,10 +44,15 @@
       max-width: 416px;
       margin: 0;
     }
-    
+
     &__text {
       color: $color-light-300;
       max-width: 486px;
+    }
+
+    @media (min-width: $tablet) {
+      gap: 42px;
+      padding-bottom: 100px;
     }
   }
 }
