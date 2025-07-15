@@ -11,6 +11,7 @@ interface NavigationLinkProps {
   href: string;
   activeClassName: string;
   children: ReactNode;
+  onClick: () => void;
 }
 
 const NavigationLink: FC<NavigationLinkProps> = ({
@@ -18,6 +19,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({
   href,
   activeClassName,
   children,
+  onClick,
 }) => (
   <li
     className={cn(styles.root, {
@@ -25,7 +27,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({
       [styles.root_active]: isActive,
     })}
   >
-    <Link href={href}>{children}</Link>
+    <Link href={href} onClick={onClick}>{children}</Link>
   </li>
 );
 
