@@ -1,0 +1,24 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.container {
+  width: min(1200px, 100% - 80px);
+  margin: 0 auto;
+}
+
+.pill {
+  font-weight: 500;
+  border-radius: 100px;
+  background-color: $color-accent-200;
+  transition: $main-transition;
+  width: fit-content;
+  padding: 15px 45px;
+
+  @include hover {
+    background-color: $color-accent-100;
+  }
+
+  &:active {
+    background-color: $color-accent-300;
+  }
+}
