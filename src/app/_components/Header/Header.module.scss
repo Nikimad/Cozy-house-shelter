@@ -1,21 +1,31 @@
 @use "@/styles/variables.scss" as *;
 @use "@/styles/mixins.scss" as *;
 @use "@/styles/z-index.scss" as *;
+@use "@/generated_styles/_variables.scss" as *;
 @use "@/generated_styles/breakpoints.scss" as *;
 
 .root {
   position: sticky;
   top: 0;
-  padding: 1rem;
-  background: black;
+  z-index: $z-index-header;
+  height: $header-height;
+  background-image: url("/images/noise.png"),
+    radial-gradient(50% 100% at 0 0px, #5b483a 0% 5%, #0000 100%),
+    radial-gradient(100% 215.42% at 0% 180px, #5b483a 0%, #262425 100%);
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-size: auto;
+}
+
+.content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 60px 0;
 }
 
 .brand {
   display: grid;
-  gap: 10px;
+  gap: 6px;
 
   &__title {
     font-size: 32px;
@@ -31,7 +41,7 @@
 
   &__title,
   &__subtitle {
-    line-height: 15px;
+    line-height: 1.2;
   }
 }
 
