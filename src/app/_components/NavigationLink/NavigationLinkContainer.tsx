@@ -11,6 +11,7 @@ interface NavigationLinkContainerProps {
   href: string;
   activeClassName: string;
   children: ReactNode;
+  onClick: () => void;
 }
 
 const NavigationLinkContainer: FC<NavigationLinkContainerProps> = ({
@@ -18,6 +19,7 @@ const NavigationLinkContainer: FC<NavigationLinkContainerProps> = ({
   href,
   activeClassName,
   children,
+  onClick,
 }) => {
   const isActive = useNavigationObserver() === id;
 
@@ -26,6 +28,7 @@ const NavigationLinkContainer: FC<NavigationLinkContainerProps> = ({
       isActive={isActive}
       href={href}
       activeClassName={activeClassName}
+      onClick={onClick}
     >
       {children}
     </NavigationLink>

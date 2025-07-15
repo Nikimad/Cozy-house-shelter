@@ -23,7 +23,7 @@ const Navigation: FC<NavigationProps> = ({ id, isOpen, onClose }) => {
   if (isTablet) {
     return (
       <nav id={id} className={styles.root}>
-        <NavigationList />
+        <NavigationList onLinkClick={() => {}} />
       </nav>
     );
   }
@@ -38,7 +38,7 @@ const Navigation: FC<NavigationProps> = ({ id, isOpen, onClose }) => {
         transition={{ type: "tween", duration: 0.3 }}
         className={styles.root}
       >
-        <NavigationList />
+        <NavigationList onLinkClick={onClose} />
       </motion.nav>
     </Backdrop>
   );

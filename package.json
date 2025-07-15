@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate:scss": "ts-node --project tsconfig.scripts.json scripts/generate-breakpoints-scss.ts",
+    "generate:scss": "ts-node --project tsconfig.scripts.json scripts/generateScss.ts",
     "predev": "npm run generate:scss",
     "prebuild": "npm run generate:scss",
     "dev": "next dev --turbopack",
