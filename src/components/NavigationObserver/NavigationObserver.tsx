@@ -35,7 +35,7 @@ export const NavigationObserverProvider = ({
 
   useEffect(() => {
     const sectionElements = document.querySelectorAll(
-      "section[data-observe='true']"
+      "[data-observe='true']"
     );
     observer.current = new IntersectionObserver(handleObserve, {
       threshold: 0.5,
