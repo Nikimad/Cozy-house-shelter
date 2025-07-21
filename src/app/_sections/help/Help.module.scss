@@ -1,0 +1,15 @@
+.content {
+    display: grid;
+    justify-items: center;
+    gap: 60px;
+}
+
+.__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 120px;
+    row-gap: 50px;
+    margin: 0;
+    padding: 0;
+}
