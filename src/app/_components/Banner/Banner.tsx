@@ -2,12 +2,13 @@ import cn from "classnames";
 
 import Link from "next/link";
 import Image from "next/image";
+import ContentWrapper from "../ContentWrapper";
 
 import styles from "./Banner.module.scss";
 
 const Banner = () => (
   <section className={styles.root}>
-    <div className={cn("container", styles.content)}>
+    <ContentWrapper className={styles.content}>
       <div className={styles.content__info}>
         <h2 className={styles.content__info__title}>
           Not only people need a house
@@ -21,16 +22,13 @@ const Banner = () => (
           Make a friend
         </Link>
       </div>
-      <div className={styles.content__img__container}>
-
       <Image
-        className={styles.content__img}
         src="/images/start-screen-puppy.png"
         alt="puppy"
-        fill
-        />
-        </div>
-    </div>
+        width={678}
+        height={728}
+      />
+    </ContentWrapper>
   </section>
 );
 
