@@ -8,7 +8,7 @@ import "@/styles/global.scss";
 
 import Providers from "@/components/Providers";
 import Header from "./_components/Header";
-import Banner from "./_components/Banner";
+import Footer from "./_components/Footer";
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -30,8 +30,8 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
       <body className={cn("body", roboto.className)}>
         <Providers>
           <Header />
-          <Banner />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
