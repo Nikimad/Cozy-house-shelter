@@ -1,11 +1,6 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
 
-.container {
-  width: min(1200px, 100% - 80px);
-  margin: 0 auto;
-}
-
 .pill {
   font-weight: 500;
   border-radius: 100px;

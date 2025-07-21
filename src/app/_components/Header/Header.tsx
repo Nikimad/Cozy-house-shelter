@@ -1,8 +1,11 @@
 import type { FC } from "react";
+
 import cn from "classnames";
 import styles from "./Header.module.scss";
 
 import Navigation from "../Navigation";
+import ContentWrapper from "../ContentWrapper";
+
 
 interface HeaderProps {
   isOpen: boolean;
@@ -11,7 +14,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ isOpen, onToggle }) => (
   <header className={cn(styles.root)}>
-    <div className={cn("container", styles.content)}>
+    <ContentWrapper className={styles.content}>
       <div className={styles.brand}>
         <h1 className={styles.brand__title}>Cozy House</h1>
         <h2 className={styles.brand__subtitle}>Shelter for pets in Boston</h2>
@@ -33,7 +36,7 @@ const Header: FC<HeaderProps> = ({ isOpen, onToggle }) => (
           <span className={styles.sidebar__button__line} aria-hidden="true" />
         </button>
       </div>
-    </div>
+    </ContentWrapper>
   </header>
 );
 

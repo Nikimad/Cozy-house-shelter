@@ -1,0 +1,14 @@
+.root {
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  grid-auto-rows: min-content;
+  min-width: 130px;
+}
+
+.__title {
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0;
+}

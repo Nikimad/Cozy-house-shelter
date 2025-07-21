@@ -1,0 +1,9 @@
+@use "@/generated_styles/_breakpoints.scss" as *;
+
+.root {
+  padding: 40px 0;
+
+  @media (min-width: $tablet) {
+    padding: 80px 0;
+  }
+}
