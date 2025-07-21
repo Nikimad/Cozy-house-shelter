@@ -1,0 +1,13 @@
+@use "@/styles/mixins.scss" as *;
+
+.root {
+  @include sharedBackground;
+  padding-top: 40px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
