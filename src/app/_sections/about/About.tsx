@@ -18,7 +18,7 @@ const About = () => (
         <SectionTitle>
           About the shelter
           <br />
-          "Cozy House"
+          &quot;Cozy House&quot;
         </SectionTitle>
         <p>
           Currently we have 121 dogs and 342 cats on our hands and statistics
