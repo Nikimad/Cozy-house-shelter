@@ -1,7 +1,6 @@
 @use "@/styles/variables.scss" as *;
 @use "@/generated_styles/_breakpoints.scss" as *;
 
-
 .root {
   list-style: none;
   display: grid;
@@ -9,24 +8,68 @@
   gap: 1em;
   padding: 0;
   margin: 0;
-
-  &::before {
-    content: "";
-    height: 3px;
-    border-radius: 2px;
-    background-color: $color-accent-200;
-    position: absolute;
-    left: anchor(--nav-link-active left);
-    right: anchor(--nav-link-active right, 0);
-    bottom: -10px;
-    transition: left $main-transition, right $main-transition;
-  }
+  position: relative;
 
   @media (min-width: $tablet) {
     display: flex;
   }
-}
 
-.activeItem {
-  anchor-name: --nav-link-active;
+  @supports (anchor-name: --nav-link-active) {
+    &::before {
+      content: "";
+      background-color: $color-accent-200;
+      border-radius: 2px;
+      position: absolute;
+      transition: left $main-transition, right $main-transition,
+        top $main-transition, bottom $main-transition;
+
+      top: anchor(--nav-link-active top);
+      bottom: anchor(--nav-link-active bottom, 0);
+      left: -10px;
+      width: 3px;
+      height: auto;
+
+      @media (min-width: $tablet) {
+        top: auto;
+        bottom: -10px;
+        left: anchor(--nav-link-active left);
+        right: anchor(--nav-link-active right, 0);
+        width: auto;
+        height: 3px;
+      }
+    }
+
+    .activeItem {
+      anchor-name: --nav-link-active;
+    }
+  }
+
+  @supports not (anchor-name: --nav-link-active) {
+    .activeItem {
+      position: relative;
+
+      &::after {
+        content: "";
+        background-color: $color-accent-200;
+        border-radius: 2px;
+        position: absolute;
+        transition: left $main-transition, right $main-transition,
+          top $main-transition, bottom $main-transition;
+
+        top: 0;
+        bottom: 0;
+        left: -10px;
+        width: 3px;
+
+        @media (min-width: $tablet) {
+          top: auto;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          height: 3px;
+          width: auto;
+        }
+      }
+    }
+  }
 }
