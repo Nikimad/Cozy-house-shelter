@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -6,13 +6,9 @@ import cn from "classnames";
 
 import "@/styles/global.scss";
 
-import Providers from "@/components/Providers";
+import Providers from "@/providers"
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
-
-interface RootLayoutProps {
-  children: ReactNode;
-}
 
 const roboto = Roboto({
   variable: "--roboto",
@@ -24,7 +20,7 @@ export const metadata: Metadata = {
   description: "Cozy house shelter",
 };
 
-const RootLayout: FC<RootLayoutProps> = ({ children }) => {
+const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en">
       <body className={cn("body", roboto.className)}>
